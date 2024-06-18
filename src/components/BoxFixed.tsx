@@ -20,13 +20,12 @@ const BoxFixed = ({ positions }: AddFixedBoxProps) => {
       {positions.map((pos, i) => {
         if (i !== 0) {
           return (
-            <div>
-              <p className="text-md">
+            <div key={i} className="container">
+              <p className="text-md inline-block">
                 X: {pos.x} Y: {pos.y}
               </p>
               <div
                 className="cursor-fixed"
-                key={i}
                 style={
                   {
                     left: Number(`${pos.x - 50}`) + "px",

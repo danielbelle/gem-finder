@@ -1,4 +1,4 @@
-import { useReducer, useEffect } from "react";
+import { useReducer, useEffect, useState } from "react";
 import BoxMotionCursor from "./BoxMotionCursor";
 import BoxFixed from "./BoxFixed";
 
@@ -14,6 +14,7 @@ const Boxes: React.FC = (): JSX.Element => {
     | { type: "mousemove"; position: PositionMouse }
     | { type: "mousedown"; x: number; y: number };
 
+  const [boxSelector, setBoxSelector] = useState(false);
   const [positions, dispatch] = useReducer(positionsReducer, initialPositions);
 
   function positionsReducer(
@@ -43,6 +44,7 @@ const Boxes: React.FC = (): JSX.Element => {
         type: "mousemove",
         position: { x: e.clientX, y: e.clientY },
       });
+      setBoxSelector(true);
     };
 
     const handleAddBox = (e: { clientX: number; clientY: number }) => {
@@ -64,7 +66,7 @@ const Boxes: React.FC = (): JSX.Element => {
 
   return (
     <>
-      <BoxMotionCursor positions={positions} />
+      {boxSelector ? "" : <BoxMotionCursor positions={positions} />}
       <BoxFixed positions={positions} />
     </>
   );

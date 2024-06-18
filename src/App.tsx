@@ -4,9 +4,6 @@ import Boxes from "./components/Boxes.tsx";
 function App() {
   return (
     <>
-      {/*
-      <TaskApp />
-      */}
       <Maps />
       <Boxes />
     </>
