@@ -1,19 +1,11 @@
-//import { useState } from "react";
-import BoxMotionCursor from "./BoxMotionCursor";
 import BoxFixed from "./BoxFixed";
+import BoxMotionCursor from "./BoxMotionCursor";
 import HookMouse from "./HookMouse";
 
 const Boxes: React.FC = (): JSX.Element => {
-  //const [boxSelector, setBoxSelector] = useState(true);
-  /*
-  const handleChangeBoxSelector = () => {
-    setBoxSelector((prev) => !prev);
-  };*/
-
   return (
     <>
       <BoxMotionCursor positions={HookMouse()} />
-      {/*boxSelector && <BoxMotionCursor positions={HookMouse()} />*/}
       <BoxFixed positions={HookMouse()} />
     </>
   );
