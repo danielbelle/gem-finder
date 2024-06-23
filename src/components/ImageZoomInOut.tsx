@@ -16,12 +16,14 @@ const ImageZoomInOut = ({ imageUrl, onSendLevel }: ImageZoomInOutProps) => {
   const internalScaleZoom = 1;
 
   const handleZoomIn = () => {
+    if (scale == 8) return;
     setScale((scale) => {
       return scale + internalScaleZoom;
     });
   };
 
   const handleZoomOut = () => {
+    if (scale == 1) return;
     setScale((scale) => {
       return scale - internalScaleZoom;
     });
@@ -42,6 +44,8 @@ const ImageZoomInOut = ({ imageUrl, onSendLevel }: ImageZoomInOutProps) => {
       const deltaX = e.clientX - prevPosition.x;
       const deltaY = e.clientY - prevPosition.y;
       prevPosition = { x: e.clientX, y: e.clientY };
+
+      console.log();
 
       setPosition((position) => ({
         x: position.x + deltaX,
@@ -94,7 +98,7 @@ const ImageZoomInOut = ({ imageUrl, onSendLevel }: ImageZoomInOutProps) => {
         src={imageUrl}
         alt=""
         style={{
-          width: "55vw",
+          width: "33vw",
           height: "auto",
           cursor: "move",
           transform: `scale(${scale}) translate(${position.x}px, ${position.y}px)`,
