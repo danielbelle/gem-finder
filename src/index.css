@@ -103,8 +103,8 @@ input[type='radio'] {
   border-radius: 8px 0 8px;
   overflow: hidden;
   position: absolute;
-  top: 0;
-  left: 0;
+  bottom: 0;
+  right: 0;
   z-index: 100;
 }
 
@@ -228,4 +228,75 @@ button {
   left: 50%;
   top: 50%;
   background: var(--bg-mini-box);
+}
+
+.form {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.input {
+  background: rgb(226, 226, 226);
+  padding: 0.5rem;
+  width: 12rem;
+}
+
+.input+.input {
+  margin-left: 0.5rem;
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+}
+
+input {
+  font: inherit;
+  padding: 0.3rem;
+  width: 4rem;
+}
+
+.imageWrapper {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+.tile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* background: rgba(204, 43, 43, 0.4); */
+  /* border: 1px solid rgba(255, 0, 0, 0.8); */
+}
+
+.tileContent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.tileBorder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.tileBorderContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  bottom: 0;
+  left: 0;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: white;
+  font-size: 0.7rem;
 }
